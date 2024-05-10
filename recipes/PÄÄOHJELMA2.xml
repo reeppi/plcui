@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <plc>1</plc>
+    <param>.bGrip1</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.bGrip2</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.strokeTime</param>
+    <value>1000</value>
+  </setup>
+  <setup>
+    <param>.fEndRun</param>
+    <value>200</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <param />
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+  <setup>
+    <value>500</value>
+  </setup>
+</DocumentElement>

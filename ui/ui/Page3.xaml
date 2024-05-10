@@ -1,0 +1,29 @@
+﻿<Page x:Class="ui.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ui"
+      xmlns:p="clr-namespace:libPLC;assembly=libPLC"
+      mc:Ignorable="d" 
+     Width="{StaticResource frameW}" Height="{StaticResource frameH}" 
+      Title="Page1" 
+      HorizontalAlignment="Left" 
+      VerticalAlignment="Top" 
+      x:Name="page"
+      KeepAlive="True" Loaded="page_Loaded"
+      Style="{StaticResource defaultStylePage}"
+      >
+
+    <Canvas>
+        <p:recipeControl  x:Name="variablesC"  DgvType="variables"  DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="480" Width="706"/>
+        <p:dirControl x:Name="dirC"  IniName="PLC"  Dir="plc" Canvas.Left="807" Canvas.Top="10" Height="103" Width="119"/>
+        <Button x:Name="buttonReloadConnection" Click="buttonReloadConnection_Click" Content="Reload" Canvas.Left="807" Canvas.Top="405" Width="119" Height="42"/>
+        <Button x:Name="buttonRefresh" Content="Refresh" Canvas.Left="807" Canvas.Top="361" Width="119" Height="37" Click="buttonRefresh_Click"/>
+        <Button x:Name="buttonAddWatch" Content="AddWatch" Height="40" Canvas.Left="807" Canvas.Top="273" Width="119" Click="buttonAddWatch_Click"/>
+        <Button x:Name="buttonAddChart" Content="AddScope" Height="40" Canvas.Left="807" Canvas.Top="316" Width="119" Click="buttonAddChart_Click"/>
+
+        <p:plcButton Text="Save &#x0a;persistent &#x0a;PLC-data" Input="{Binding plc[1].tags[.bSave]}" Img="indicator"  CType="press"  Canvas.Left="807" Canvas.Top="152" Width="119" Height="82"/>
+
+    </Canvas>
+</Page>

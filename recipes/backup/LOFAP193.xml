@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <param>alku</param>
+    <value>3</value>
+  </setup>
+  <setup>
+    <param>var1</param>
+    <value>55</value>
+  </setup>
+  <setup>
+    <param>var2</param>
+    <value>866</value>
+  </setup>
+  <setup>
+    <param>BBB</param>
+    <value>22</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <param />
+    <value>101</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <param>a</param>
+    <value>500</value>
+  </setup>
+  <setup>
+    <param />
+  </setup>
+</DocumentElement>

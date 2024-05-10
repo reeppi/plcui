@@ -1,0 +1,57 @@
+﻿<Page x:Class="ui.pageManual"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ui"
+      xmlns:p="clr-namespace:libPLC;assembly=libPLC"
+      xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+      mc:Ignorable="d"
+      Title="Auto" Width="{StaticResource frameW}" Height="{StaticResource frameH}"  HorizontalAlignment="Left" VerticalAlignment="Top"
+       KeepAlive="True"
+       Style="{StaticResource defaultStylePage}"
+      >
+    <Canvas DataContext="{Binding plc[1]}">
+        <p:plcButton Text="Rulla 1" Input="{Binding tags[.oRoller1]}" Img="cylinder"  CType="toggle"  Canvas.Left="43" Canvas.Top="43" Width="155" Height="128"/>
+        <p:plcButton Text="Rulla 2" Input="{Binding tags[.oRoller2]}" Img="cylinder"  CType="toggle"  Canvas.Left="198" Canvas.Top="43" Width="155" Height="128"/>
+        <p:plcButton Text="Rulla 3" Input="{Binding tags[.oRoller3]}" Img="cylinder"  CType="toggle"  Canvas.Left="354" Canvas.Top="43" Width="155" Height="128"/>
+        <p:plcButton Text="Rulla 4" Input="{Binding tags[.oRoller4]}" Img="cylinder"  CType="toggle"  Canvas.Left="509" Canvas.Top="43" Width="155" Height="128"/>
+        <p:plcButton Text="Rulla 5" Input="{Binding tags[.oRoller5]}" Img="cylinder"  CType="toggle"  Canvas.Left="665" Canvas.Top="43" Width="155" Height="128"/>
+        <p:plcButton Text="Rulla 6" Input="{Binding tags[.oRoller6]}" Img="cylinder"  CType="toggle"  Canvas.Left="820" Canvas.Top="43" Width="155" Height="128"/>
+
+        <p:plcIndicator Text=" -B1 Rulla1" Input="{Binding tags[.iRoller1]}" Canvas.Left="48" Canvas.Top="171"/>
+        <p:plcIndicator Text=" -B2 Rulla2" Input="{Binding tags[.iRoller2]}" Canvas.Left="203" Canvas.Top="171"/>
+        <p:plcIndicator Text=" -B3 Rulla3" Input="{Binding tags[.iRoller3]}" Canvas.Left="354" Canvas.Top="171"/>
+        <p:plcIndicator Text=" -B4 Rulla4" Input="{Binding tags[.iRoller4]}" Canvas.Left="514" Canvas.Top="171"/>
+        <p:plcIndicator Text=" -B5 Rulla5" Input="{Binding tags[.iRoller5]}" Canvas.Left="665" Canvas.Top="171"/>
+        <p:plcIndicator Text=" -B6 Rulla6" Input="{Binding tags[.iRoller6]}" Canvas.Left="820" Canvas.Top="171"/>
+        <p:plcButton Text="Axis FW" Input="{Binding tags[.bDriveFW]}" Img="fw"  CType="press"  Canvas.Left="48" Canvas.Top="218" Width="155" Height="128"/>
+        <p:plcButton Text="Axis RW" Input="{Binding tags[.bDriveRW]}" Img="rw"  CType="press"  Canvas.Left="208" Canvas.Top="218" Width="155" Height="128"/>
+
+
+
+        <TextBlock Text="{c:Binding tags[.Axis.nctoplc.actpos].Val, StringFormat={}{0:0.###}}"  Width="149"  Canvas.Left="54" Canvas.Top="351" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
+        <p:plcButton Text="Pukkari" Input="{Binding tags[.oPusher]}" Img="cylinder"  CType="toggle"  Canvas.Left="820" Canvas.Top="218" Width="155" Height="128"/>
+        <p:plcIndicator Text=" +B7" Input="{Binding tags[.iPusherAOut]}" Canvas.Left="743" Canvas.Top="218"/>
+        <p:plcIndicator Text=" +B9" Input="{Binding tags[.iPusherBOut]}" Canvas.Left="743" Canvas.Top="250"/>
+        <p:plcIndicator Text=" -B8" Input="{Binding tags[.iPusherAIn]}" Canvas.Left="743" Canvas.Top="279"/>
+        <p:plcIndicator Text=" -B10" Input="{Binding tags[.iPusherBIn]}" Canvas.Left="743" Canvas.Top="311"/>
+        <p:plcButton Text="Kelkka Pukkari" Input="{Binding tags[.oGripPusher]}" Img="cylinder"  CType="toggle"  Canvas.Left="529" Canvas.Top="389" Width="177" Height="49" Visibility="Hidden"/>
+        <p:plcButton Text="Tunnistin Sylinteri" Input="{Binding tags[.oSlider]}" Img="cylinder"  CType="toggle"  Canvas.Left="529" Canvas.Top="333" Width="177" Height="49"/>
+        <p:plcButton Text="Pihti 1 etu" Input="{Binding tags[.oGripper1]}" Img="cylinder"  CType="toggle"  Canvas.Left="529" Canvas.Top="225" Width="177" Height="49"/>
+        <p:plcButton Text="Pihti 2 taka" Input="{Binding tags[.oGripper2]}" Img="cylinder"  CType="toggle"  Canvas.Left="529" Canvas.Top="279" Width="177" Height="49"/>
+        <p:plcIndicator Text="B12 Tunnistin 2" Input="{Binding tags[.iSliderGrip2]}" Canvas.Left="389" Canvas.Top="289" Width="134"/>
+        <p:plcIndicator Text="B11 Tunnistin 1" Input="{Binding tags[.iSliderGrip1]}" Canvas.Left="389" Canvas.Top="234" Width="134"/>
+
+
+
+
+        <!--  <p:plcSlider  Input="{Binding tags[.lVar1]}" Canvas.Left="753" Canvas.Top="265" Height="68" Width="242" RenderTransformOrigin="0.5,0.5"/> -->
+        <!--   <local:plcScope Background="White" TimeScale="20000"  Input="{Binding tags[.lVar1]}" Height="196" Canvas.Left="41" Canvas.Top="265" Width="673"/> -->
+
+    </Canvas>
+
+
+
+
+</Page>

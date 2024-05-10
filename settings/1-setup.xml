@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <param>.vel</param>
+    <value>800</value>
+  </setup>
+  <setup>
+    <param>.acc</param>
+    <value>4000</value>
+  </setup>
+  <setup>
+    <param>.dec</param>
+    <value>4000</value>
+  </setup>
+  <setup>
+    <param>.jerk</param>
+    <value>12000</value>
+  </setup>
+</DocumentElement>

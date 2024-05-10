@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <plc>1</plc>
+    <param>demo</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <param />
+    <value>101</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <value>66</value>
+  </setup>
+  <setup>
+    <value>55</value>
+  </setup>
+  <setup>
+    <value>444</value>
+  </setup>
+  <setup>
+    <value>33</value>
+  </setup>
+</DocumentElement>

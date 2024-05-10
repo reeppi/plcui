@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="libPLC.plcSlider"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:libPLC"
+             xmlns:clr="clr-namespace:System;assembly=mscorlib"
+             xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+             mc:Ignorable="d" Height="40" Width="200"
+             x:Name="sliderControl" Loaded="sliderControl_Loaded">
+    <Canvas>
+        <Rectangle  x:Name="bgRect" Height="{Binding Height, ElementName=sliderControl}" Width="{Binding Width, ElementName=sliderControl}" Stroke="Gray" Fill="#00FFFFFF"  PreviewMouseUp="moveSliderUp"/>
+        <Button x:Name="slider"  Width="50"  Height="{Binding Height, ElementName=sliderControl}" Canvas.Left="0" Canvas.Top="0">
+            <Button.Content>
+                <Line   X1="0" Y2="{c:Binding Height-5, ElementName=sliderControl}" Stroke="Gray"></Line>
+            </Button.Content>
+        </Button>
+        <TextBlock IsHitTestVisible="False" x:Name="ValueText"  Canvas.Left="1"  Width="97" Height="17"/>
+    </Canvas>
+</UserControl>

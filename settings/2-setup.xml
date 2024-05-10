@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <plc>1</plc>
+    <param>.bVar1</param>
+    <value>true</value>
+  </setup>
+  <setup>
+    <plc>1</plc>
+    <param>.bVar2</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.lVar1</param>
+    <value>20</value>
+  </setup>
+</DocumentElement>

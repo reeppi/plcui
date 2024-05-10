@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <param>.bVar1</param>
+    <value>true</value>
+  </setup>
+  <setup>
+    <param>.bVar2</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.lVar1</param>
+    <value>20</value>
+  </setup>
+  <setup>
+    <param>.sVar1</param>
+    <value>KK</value>
+  </setup>
+  <setup>
+    <param>demo</param>
+    <value>66</value>
+  </setup>
+  <setup>
+    <param>.bEstop</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.nVar1</param>
+    <value>5</value>
+  </setup>
+  <setup>
+    <param>TESTB</param>
+    <value>Hola</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <param />
+    <value>101</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+  <setup>
+    <value>384</value>
+  </setup>
+  <setup>
+    <param />
+    <value>288</value>
+  </setup>
+</DocumentElement>

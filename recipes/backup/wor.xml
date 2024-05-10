@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <param>var1</param>
+    <value>3</value>
+  </setup>
+  <setup>
+    <param>nop</param>
+    <value>866</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <param>x10</param>
+    <value>50</value>
+  </setup>
+  <setup>
+    <param>x5</param>
+    <value>100</value>
+  </setup>
+</DocumentElement>
