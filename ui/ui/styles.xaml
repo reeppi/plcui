@@ -155,7 +155,6 @@
     </Style>
     <Style BasedOn="{StaticResource blueButton2}" TargetType="Button"/>
 
-    <!--
     <Style TargetType="ScrollBar">
         <Setter Property="Background" >
             <Setter.Value>
@@ -166,7 +165,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    -->
 
 
 </ResourceDictionary>

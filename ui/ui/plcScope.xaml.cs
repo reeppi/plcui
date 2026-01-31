@@ -28,24 +28,7 @@ namespace ui
             InitializeComponent();
 
             TimeLine = new List<valEntry>();
-            ValueLines = new List<valLine>();
-            MouseLine = new Line();
         }
-
-
-        public class valLine 
-        {
-            public Point P1 { get; set; }
-            public Point P2 { get; set; }
-            public double Val { get; set; }
-            public Point ClosestPoint;
-            public double Dist { get; set; }
-        }
-
-        Line MouseLine { get; set; } 
-        List<valLine> ValueLines { get; set; }
-
-        public int RefreshRate { get; set; }
 
         List<valEntry> TimeLine { get; set; }
         bool autoYfactor = false;
@@ -142,11 +125,6 @@ namespace ui
             if (mainCanvas != null) return;
 
             mainCanvas = new Canvas();
-
-            mainCanvas.Children.Add(MouseLine);
-           // Canvas.SetZIndex(MouseLine, -100);
-            this.PreviewMouseMove += PlcScope_PreviewMouseMove; 
-
             this.AddChild(mainCanvas);
             
             refreshTimer = new Timer();
@@ -154,16 +132,10 @@ namespace ui
             refreshTimer.Elapsed += RefreshTimer_Elapsed;
             refreshTimer.Enabled = true;
 
-            double fontSize=(double)this.FindResource("defaultFontSize");
-
             leftUpText = new TextBlock { Text = "00" };
             leftDownText = new TextBlock { Text = "00" };
             rightUpText = new TextBlock { Text = "00" };
             rightDownText = new TextBlock { Text = "00" };
-            /*leftUpText.FontSize = fontSize;
-            leftDownText.FontSize = fontSize;
-            rightUpText.FontSize = fontSize;
-            rightDownText.FontSize = fontSize;*/
 
             valText = new TextBlock { Text = "00" };
 
@@ -176,39 +148,6 @@ namespace ui
             lastTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             drawChart();
 
-        }
-
-        private void drawMouseLine(Point mousePt)
-        {
-            if (ValueLines.Count == 0) return;
-            foreach (valLine ValLine in ValueLines)
-                ValLine.Dist = helper.FindDistanceToSegment(mousePt, ValLine.P1, ValLine.P2, out ValLine.ClosestPoint);
-           
-            ValueLines.Sort(delegate (valLine p1, valLine p2) { return p1.Dist.CompareTo(p2.Dist); });
-            valLine ValL = ValueLines.First();
-            MouseLine.X1 = mousePt.X;
-            MouseLine.Y1 = mousePt.Y;
-            MouseLine.X2 = ValL.ClosestPoint.X;
-            MouseLine.Y2 = ValL.ClosestPoint.Y;
-            MouseLine.Stroke = Brushes.Gray;
-            MouseLine.StrokeThickness = 1;
-
-            rightUpText.Text = String.Format("{0:0.#}", ValL.Val);
-            Size msrSize1 = new Size(200, 200);
-            rightUpText.Measure(msrSize1);
-            Canvas.SetLeft(rightUpText, this.Width - rightUpText.DesiredSize.Width-2);
-
-            rightDownText.Text = String.Format("{0:0}", (ValL.ClosestPoint.X-this.Width) / xFactor);
-            Size msrSize2 = new Size(200, 200);
-            rightDownText.Measure(msrSize2);
-            Canvas.SetLeft(rightDownText, this.Width - rightDownText.DesiredSize.Width -2);
-            Canvas.SetTop(rightDownText, this.Height - rightDownText.DesiredSize.Height);
-        }
-
-        private void PlcScope_PreviewMouseMove(object sender, MouseEventArgs e)
-        {
-            if (!Stop) return;
-            drawMouseLine(e.GetPosition(mainCanvas));
         }
 
         long lastTime = 0;
@@ -225,16 +164,7 @@ namespace ui
             rect.Stroke = Brushes.Gray;
             mainCanvas.Children.Add(rect);
 
-            Point pt = Mouse.GetPosition(this);
-            if ( pt.X < this.Width && pt.X > 0 && pt.Y < this.Height && pt.Y > 0 )
-            {
-               drawMouseLine(pt);
-               mainCanvas.Children.Add(MouseLine);
-               mainCanvas.Children.Add(rightUpText);
-               mainCanvas.Children.Add(rightDownText);
-            }
-            ValueLines.Clear();
-
+            
             if ( autoYfactor )
             {
                 if (TimeLine.Count > 0)
@@ -256,8 +186,8 @@ namespace ui
             else
                 c = 0;
             Line liCenterY = new Line();
-            liCenterY.Stroke = Brushes.Silver;
-            liCenterY.StrokeThickness = 2;
+            liCenterY.Stroke = Brushes.Gray;
+            liCenterY.StrokeThickness = 1;
             liCenterY.StrokeDashArray = new DoubleCollection() { 2 };
             liCenterY.X1 = 0;
             liCenterY.Y1 = (this.Height - 2) +c * yFactor;
@@ -281,8 +211,7 @@ namespace ui
                 double startX =0;
                 double endX = 0;
 
-                if (i == 0)
-                    startX = this.Width;
+                if (i == 0) startX = this.Width;
 
 
                 if (valPrev != null)
@@ -296,26 +225,20 @@ namespace ui
                     endX = 0;
                     last = true;
                 }
-                double Y = (this.Height - 2) - (val.Val - Min) * yFactor;
+
                 Line li = new Line();
                 li.Stroke = Brushes.DarkRed;
-                li.StrokeThickness = 1;
+                li.StrokeThickness = 2;
                 li.X1 = startX;
-                li.Y1 = Y;
+                li.Y1 = (this.Height-2)-(val.Val-Min) * yFactor;
                 li.X2 = endX;
-                li.Y2 = Y;
+                li.Y2 = (this.Height-2)-(val.Val-Min) * yFactor;
                 mainCanvas.Children.Add(li);
-
-                valLine ValLine = new valLine();
-                ValLine.P1 = new Point(startX,Y);
-                ValLine.P2 = new Point(endX, Y);
-                ValLine.Val = val.Val;
-                ValueLines.Add(ValLine);
 
                 if (valPrev != null)
                 {
                     Line liY = new Line();
-                    liY.StrokeThickness = 1;
+                    liY.StrokeThickness = 2;
                     liY.Stroke = Brushes.DarkRed;
                     liY.X1 = startX;
                     liY.Y1 = (this.Height-2) - (val.Val-Min) * yFactor;
@@ -328,22 +251,22 @@ namespace ui
                 if (last) break;
             }
 
+
+
             mainCanvas.Children.Add(leftUpText);
             Canvas.SetLeft(leftUpText, 2);
             leftUpText.Text = Max.ToString();
 
             mainCanvas.Children.Add(leftDownText);
             Canvas.SetLeft(leftDownText, 2);
-            Canvas.SetTop(leftDownText, this.Height - leftDownTextSize.Height-2 );
+            Canvas.SetTop(leftDownText, this.Height - leftDownTextSize.Height - 2);
             leftDownText.Text = Min.ToString();
 
             mainCanvas.Children.Add(valText);
             Canvas.SetLeft(valText, 2);
-            Canvas.SetTop(valText, this.Height / 2 - leftDownTextSize.Height / 2-2 );
+            Canvas.SetTop(valText, this.Height / 2 - leftDownTextSize.Height / 2 - 2);
             if ( TimeLine.Count > 0 )
             valText.Text = String.Format("{0:0.#}", TimeLine.First().Val);
-
-
 
 
         }
@@ -363,6 +286,7 @@ namespace ui
 
         private void UserControl_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
+            Console.WriteLine("Klik");
             menu = new ContextMenu();
             MenuItem closeMenuItem  = new MenuItem { Header = "Close" };
             closeMenuItem.Click += CloseMenuItem_Click;
@@ -396,8 +320,6 @@ namespace ui
             {
                 Stop = true;
                 refreshTimer.Stop();
-            //    mainCanvas.Children.Add(MouseLine);
-            //    mainCanvas.Children.Add(rightUpText);
             }
         }
 

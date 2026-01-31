@@ -58,6 +58,7 @@ namespace libPLC
                 ParList = setupList;
             }
            
+          
 
             DataPlc = "";
 
@@ -74,22 +75,11 @@ namespace libPLC
                 {
                     bData = true;
 
-
-                    /*
+                    
                     if (dr.Row["plc"].ToString() == "")
                         DataPlc = plcSetup.defaultPLC;
                     else
                         DataPlc = dr.Row["plc"].ToString();
-                        */
-                    
-                    if (dr.Row.Table.Columns.Contains("plc"))
-                    {
-                        if (dr.Row["plc"].ToString() == "")
-                            DataPlc = plcSetup.defaultPLC;
-                        else
-                            DataPlc = dr.Row["plc"].ToString();
-                    } else
-                        DataPlc = plcSetup.defaultPLC;
 
                 }
                 if (!bData)
@@ -98,25 +88,11 @@ namespace libPLC
                     parEntry.Param = param;
                     parEntry.Value = dr.Row["value"].ToString();
 
-                    
-                    /*
                     if (dr.Row["plc"].ToString() == "")
                         parEntry.Plc = plcSetup.defaultPLC;
                     else
                         parEntry.Plc = dr.Row["plc"].ToString();
-                        */
-                    
-                    if (dr.Row.Table.Columns.Contains("plc"))
-                    {
-                        if (dr.Row["plc"].ToString() == "")
-                            parEntry.Plc = plcSetup.defaultPLC;
-                        else
-                            parEntry.Plc = dr.Row["plc"].ToString();
-                    } 
-                    else
-                        parEntry.Plc = plcSetup.defaultPLC;
 
-              
                     paramEntry paramP = null;
                     paramP = ParList.Find(x => x.Param.Equals(parEntry.Param) && x.Plc.Equals(parEntry.Plc));
                     if (paramP == null)

@@ -117,6 +117,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="plcPath.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="plcScope.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +145,9 @@
     </Compile>
     <Compile Include="Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="plcPath.xaml.cs">
+      <DependentUpon>plcPath.xaml</DependentUpon>
     </Compile>
     <Compile Include="plcScope.xaml.cs">
       <DependentUpon>plcScope.xaml</DependentUpon>

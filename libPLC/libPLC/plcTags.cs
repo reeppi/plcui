@@ -86,20 +86,8 @@ namespace libPLC
                     else if (typeof(T) == typeof(double))
                         Plc.writeLREAL(this, val.ChangeType<Double>());
                 }
-
-                
-
                 if (Plc.DgVar.IsVisible)
                 {
-                    /*
-                     *   foreach (TextBox textBox in helper.FindVisualChildren<TextBox>(variablesC.dataGrid))
-                            {
-                            MultiBindingExpression multiBindingExpression = BindingOperations.GetMultiBindingExpression(textBox, TextBox.TextProperty);
-                            multiBindingExpression.UpdateTarget();
-                        }
-                     * */
-
-
                     foreach (TextBox textBox in PLChelper.FindVisualChildren<TextBox>(Plc.DgVar))
                     {
                         if (textBox.Tag != null)
@@ -115,14 +103,12 @@ namespace libPLC
                 }
                 OnPropertyChanged("Val");
             }
-
-  
         }
 
         public void readValue()
         {
             if (typeof(T) == typeof(bool))
-                val = Plc.readBOOL(this).ChangeType<T>();
+                val =Plc.readBOOL(this).ChangeType<T>();
             else if (typeof(T) == typeof(double))
                 val = Plc.readLREAL(this).ChangeType<T>();
             else if (typeof(T) == typeof(UInt32))
@@ -132,22 +118,6 @@ namespace libPLC
             else if (typeof(T) == typeof(string))
                 val = Plc.readSTRING(this).ChangeType<T>();
             OnPropertyChanged("Val");
-
-            if (Plc.DgVar.IsVisible)
-            {
-                foreach (TextBox textBox in PLChelper.FindVisualChildren<TextBox>(Plc.DgVar))
-                {
-                    if (textBox.Tag != null)
-                    {
-                        if (textBox.Tag.ToString() == tag)
-                        {
-                            MultiBindingExpression multiBindingExpression = BindingOperations.GetMultiBindingExpression(textBox, TextBox.TextProperty);
-                            multiBindingExpression.UpdateTarget();
-                        }
-                    }
-
-                }
-            }
         }
 
         public classTag(string tag_, object param_, string desc_, bool online_)

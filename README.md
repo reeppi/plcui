@@ -2,13 +2,14 @@
 
 Windows based user interface library for plc devices. Currently only supports Beckhoff Twincat but can be further developed to support other devices. Also allows multiple plc devices to be connected to the same user interface. Allows parameterization of the auto program with different settings.
 The PLC user interface can be created using Visual Studio using this library. Implemented with WPF.
-<br>
+<br><br>
 <strong>Elements</strong>
 <ul>
 <li>Gauge</li>
 <li>Oscilloscope</li>
 <li>Button</li>
 <li>Slider</li>
+<li>Indicator</li>
 </ul>
 
 <img src="auto.png">

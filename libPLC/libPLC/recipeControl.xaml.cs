@@ -76,6 +76,8 @@ namespace libPLC
                 var myPlc = values[2] as string;
 
                 if (myDict == null) return "";
+
+
                 if (myDict[myPlc] == null) return "";
 
                 if (myDict.ContainsKey(myPlc))

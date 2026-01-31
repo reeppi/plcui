@@ -13,7 +13,6 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Runtime.InteropServices;
-using Microsoft.Win32;
 
 namespace libPLC
 {
@@ -101,9 +100,8 @@ namespace libPLC
 
         public classPLCTwinCat(bool online_, DataGrid dgVar_)
         {
-            DgVar = dgVar_;
             Online = online_;
-            setOnline();
+            DgVar = dgVar_;
             tags = new Dictionary<string, iTagObj>();
         }
 
@@ -111,35 +109,9 @@ namespace libPLC
         {
             Address = address_;
             Online = online_;
-            setOnline();
+            
             tags = new Dictionary<string, iTagObj>();
         }
-
-        private void setOnline()
-        {
-            string regPath = "Software\\plcUI";
-
-            RegistryKey regkey = Registry.CurrentUser.OpenSubKey(regPath, true);
-            if (regkey == null)
-            {
-                Registry.CurrentUser.CreateSubKey(regPath);
-                regkey = Registry.CurrentUser.OpenSubKey(regPath, true);
-                Registry.CurrentUser.Flush();
-            }
-
-            string strOnline = (string)regkey.GetValue("Online");
-            if (strOnline == null)
-            {
-                strOnline = "True";
-                regkey.SetValue("Online", strOnline);
-            }
-
-            bool bOnline;
-            bool.TryParse(strOnline, out bOnline);
-            Online = bOnline;
-
-        }
-
 
         public void connect()
         {
@@ -149,7 +121,7 @@ namespace libPLC
             if (Online)
             {
                 tcAds = new TcAdsClient();
-                Console.WriteLine("Connecting twincat 16.4.2021");
+                Console.WriteLine("Connecting twincat");
                 try
                 {
                     tcAds.Connect(Address, 801);
@@ -227,7 +199,7 @@ namespace libPLC
                 if (eTagName != ".bUpdateStr")
                 {
                     tags[eTagName].readValue();
-                   // Console.WriteLine("ads notify " + eTagName);
+                 //   Console.WriteLine("ads notify " + eTagName);
                 }
                 else
                     updateSTRINGS(tags[eTagName]);
@@ -237,7 +209,7 @@ namespace libPLC
         private void updateSTRINGS(iTagObj tagObj)
         {
             bool b =readBOOL(tagObj);
-            if (b)
+            if (!b)
             {
                 foreach (KeyValuePair<string, iTagObj> entry in tags)
                 {

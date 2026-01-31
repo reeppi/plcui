@@ -5,5 +5,5 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ui"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded" PreviewMouseDown="UserControl_PreviewMouseDown" Cursor="Arrow">
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded" PreviewMouseDown="UserControl_PreviewMouseDown">
 </UserControl>

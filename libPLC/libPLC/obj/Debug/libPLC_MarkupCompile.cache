@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\workhopo\koodit\plcUI\libPLC\libPLC\obj\Debug\
+C:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\obj\Debug\
 libPLC
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 12474986042
 
 24-1025805681
-182079328050
+18-1950533068
 dirControl.xaml;input\inputAlpha.xaml;input\inputNumeric.xaml;input\inputParam.xaml;plcGauge.xaml;plcIndicator.xaml;plcButton.xaml;plcImage.xaml;plcSlider.xaml;popupControl.xaml;previewControl.xaml;recipeControl.xaml;
 
 False

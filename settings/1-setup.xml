@@ -1,19 +1,51 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <setup>
-    <param>.vel</param>
-    <value>800</value>
+    <param>.bUpdateStr</param>
+    <value>True</value>
   </setup>
   <setup>
-    <param>.acc</param>
-    <value>4000</value>
+    <plc />
+    <param>.bVar1</param>
+    <value>true</value>
   </setup>
   <setup>
-    <param>.dec</param>
-    <value>4000</value>
+    <param>.bVar2</param>
+    <value>True</value>
   </setup>
   <setup>
-    <param>.jerk</param>
-    <value>12000</value>
+    <param>.lVar1</param>
+    <value>20</value>
+  </setup>
+  <setup>
+    <param>.sVar1</param>
+    <value>KK</value>
+  </setup>
+  <setup>
+    <param>demo</param>
+    <value>66</value>
+  </setup>
+  <setup>
+    <param>.bEstop</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.nVar1</param>
+    <value>5</value>
+  </setup>
+  <setup>
+    <plc>2</plc>
+    <param>TESTB</param>
+    <value>m01</value>
+  </setup>
+  <setup>
+    <plc>2</plc>
+    <param>.bVar1</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <plc>2</plc>
+    <param>TESTC</param>
+    <value>yyyy</value>
   </setup>
 </DocumentElement>

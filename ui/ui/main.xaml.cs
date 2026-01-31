@@ -101,17 +101,16 @@ namespace ui
             plcEntry = new classPLCTwinCat(true, pagePlc.variablesC.dataGrid);
             fileName = pagePlc.dirC.Path + "\\1.xml";
             plcEntry.createPlcFromFile(fileName);
-            param change = new param(4, 100, 0);
-            plcEntry.addTag(new classTag<bool>(".TestiPLC", change, "Hopsista", false));
+        //    param change = new param(4, 100, 0);
+        //    plcEntry.addTag(new classTag<bool>(".TestiPLC", change, "Hopsista", true));
             plcEntry.connect();
             dm.plc.Add(System.IO.Path.GetFileNameWithoutExtension(fileName), plcEntry);
 
-            /*
             plcEntry = new classPLCTwinCat(false, pagePlc.variablesC.dataGrid);
             fileName = pagePlc.dirC.Path + "\\2.xml";
             plcEntry.createPlcFromFile(fileName);
             plcEntry.connect();
-            dm.plc.Add(System.IO.Path.GetFileNameWithoutExtension(fileName), plcEntry);*/
+            dm.plc.Add(System.IO.Path.GetFileNameWithoutExtension(fileName), plcEntry);
 
         }
 

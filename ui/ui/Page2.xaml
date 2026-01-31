@@ -16,18 +16,10 @@
       >
 
     <Canvas>
-        <p:recipeControl DgvType="recipe" x:Name="settingsC" DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="480" Width="451"/>
-        <p:dirControl IniName="settings" Dir="settings" x:Name="dirC" Width="100" Height="350" Canvas.Left="485" Canvas.Top="10"/>
-
-        <!--
-        <local:navButton Page="auto" Text="Siirry Sivu 1"  Canvas.Left="610" Canvas.Top="28" Height="70" Width="162"/>
-        <Button x:Name="button" Content="Button" Canvas.Left="610" Canvas.Top="114" Width="162" Height="35"/>
-        -->
-
+        <p:recipeControl DgvType="recipe" x:Name="settingsC" DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="480" Width="348"/>
+        <p:dirControl IniName="settings" Dir="settings" x:Name="dirC" Width="100" Height="350" Canvas.Left="353" Canvas.Top="10"/>
+        <local:navButton Page="auto" Text="Siirry Sivu 1"  Canvas.Left="473" Canvas.Top="18" Height="70" Width="162"/>
+        <Button x:Name="button" Content="Button" Canvas.Left="473" Canvas.Top="93" Width="162" Height="35"/>
         <CheckBox x:Name="checkBox" IsChecked="{Binding Fullscreen }" Content="Fullscreen" Canvas.Left="845" Canvas.Top="452" Height="18" Width="163"/>
-        <Button x:Name="CloseButton" Content="Sammuta käyttöliittymä" Canvas.Left="796" Canvas.Top="18" Width="198" Height="80" Click="CloseButton_Click"/>
-        <Button  Content="Sulje kone" Canvas.Left="796" Canvas.Top="114" Width="198" Height="80" Click="Button_Click" RenderTransformOrigin="0.43,1.072"/>
-
-      
     </Canvas>
 </Page>

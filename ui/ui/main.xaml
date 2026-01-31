@@ -19,7 +19,7 @@
     <Canvas>
         <Frame x:Name="frame" Width="{StaticResource frameW}" Height="{StaticResource frameH}" HorizontalContentAlignment="Left" NavigationUIVisibility="Hidden"/>
         <local:navButton Text="AUTO" CurPage="{Binding CurPage}" Page="auto" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Top="482" Height="77" Width="125" FontSize="18" FontWeight="Bold"/>
-        <local:navButton Text="ASETUKSET" CurPage="{Binding CurPage}" Page="settings" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Left="250" Canvas.Top="482" Height="77" Width="125" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.125,0.443"/>
+        <local:navButton Text="SETTINGS" CurPage="{Binding CurPage}" Page="settings" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Left="250" Canvas.Top="482" Height="77" Width="125" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.125,0.443"/>
         <local:navButton Text="PLC" CurPage="{Binding CurPage}" Page="plc" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Left="375" Canvas.Top="482" Height="77" Width="103" FontSize="18" FontWeight="Bold"/>
         <CheckBox x:Name="checkBox" IsChecked="{Binding Touch}" Content="On-screen keyboard" Canvas.Left="847" Canvas.Top="528"/>
         <Canvas Height="972" Canvas.Left="450" Canvas.Top="35" Width="78" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
@@ -38,7 +38,7 @@
                 </LinearGradientBrush>
             </Canvas.Background>
         </Canvas>
-        <local:navButton Text="MANUAALI" CurPage="{Binding CurPage}" Page="manual" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Top="482" Height="77" Width="125" FontSize="18" FontWeight="Bold" Canvas.Left="125"/>
+        <local:navButton Text="MANUAL" CurPage="{Binding CurPage}" Page="manual" NavService="{Binding NavigationService, ElementName=frame}" Canvas.Top="482" Height="77" Width="125" FontSize="18" FontWeight="Bold" Canvas.Left="125"/>
 
 
     </Canvas>

@@ -53,8 +53,6 @@ namespace libPLC
         private void readPlcFromDataTable(DataTable dt)
         {
             param change = new param(4, 100, 0);
-            param cyclic = new param(3, 1000, 0);
-
             foreach (DataRow dr in dt.Rows)
             {
                 string strMaxVal = "0";
@@ -90,8 +88,6 @@ namespace libPLC
                 param parSetup = null;
                 if (mode == "change")
                     parSetup = change;
-                if (mode == "cyclic")
-                    parSetup = cyclic;
                 if (param == "ADDRESS")
                     Address = desc;
                 else

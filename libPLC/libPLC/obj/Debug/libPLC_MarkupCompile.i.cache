@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\tuomas\Projektit\plcUI\libPLC\libPLC\obj\Debug\
+C:\Users\tuomas\Desktop\plcUI\libPLC\libPLC\obj\Debug\
 libPLC
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 12474986042
 
 28-777005534
-18-13219185
+18217072239
 dirControl.xaml;input\inputAlpha.xaml;input\inputNumeric.xaml;input\inputParam.xaml;plcGauge.xaml;plcIndicator.xaml;plcButton.xaml;plcImage.xaml;plcSlider.xaml;popupControl.xaml;previewControl.xaml;recipeControl.xaml;
 
 False

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <plc />
+    <param>.bVar2</param>
+    <value>False</value>
+  </setup>
+  <setup>
+    <param>.bVar2</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.bVar1</param>
+    <value>True</value>
+  </setup>
+  <setup>
+    <param>.lVar1</param>
+    <value>40</value>
+  </setup>
+  <setup>
+    <param>start</param>
+  </setup>
+  <setup>
+    <value>59</value>
+  </setup>
+  <setup>
+    <value>66</value>
+  </setup>
+  <setup>
+    <param />
+    <value>300</value>
+  </setup>
+  <setup>
+    <value>444</value>
+  </setup>
+  <setup>
+    <value>33</value>
+  </setup>
+</DocumentElement>

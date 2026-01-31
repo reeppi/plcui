@@ -1,15 +1,15 @@
 ﻿
 
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\dirControl.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\input\inputAlpha.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\input\inputNumeric.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\input\inputParam.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\plcGauge.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\plcIndicator.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\plcButton.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\plcImage.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\plcSlider.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\popupControl.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\previewControl.xaml;;
-FC:\workhopo\koodit\plcUI\libPLC\libPLC\recipeControl.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\dirControl.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\input\inputAlpha.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\input\inputNumeric.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\input\inputParam.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\plcGauge.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\plcIndicator.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\plcButton.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\plcImage.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\plcSlider.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\popupControl.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\previewControl.xaml;;
+FC:\workhopo\koodit\simu\plcUI-simu\libPLC\libPLC\recipeControl.xaml;;
 

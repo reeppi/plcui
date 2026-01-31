@@ -12,33 +12,35 @@
        Style="{StaticResource defaultStylePage}"
       >
     <Canvas>
-        <p:plcIndicator  Input="{Binding plc[1].tags[.bEstop]}" Img="hataseis" Canvas.Left="876" Canvas.Top="11"/>
+        <p:plcIndicator  Input="{Binding plc[1].tags[.bEstop]}" Img="hataseis" Canvas.Left="634" Canvas.Top="5"/>
+        <Canvas  DataContext="{Binding plc[1]}"  Width="327" Height="163" Background="#FFFBE0E0" Canvas.Left="434" Canvas.Top="117" RenderTransformOrigin="0.5,0.5">
 
-        <!--
-        <Canvas  DataContext="{Binding plc[1]}"  Width="159" Height="141" Background="#FFFBE0E0" Canvas.Left="493" Canvas.Top="117" RenderTransformOrigin="0.5,0.5">
 
-            <p:plcButton Text="PLC1 - Var1"  Input="{Binding tags[.bVar1]}" Canvas.Left="10"   CType="toggle"  Canvas.Top="10" Width="137" Height="64"/>
-            <p:plcButton Text="PLC1  &#xA;Var2" Right="False" Input="{Binding tags[.bVar2]}"  CType="toggle" Canvas.Left="10" Canvas.Top="79" Height="52" Width="137"/>
+            <p:plcButton Text="Pause &#xA;motion" Right="False" Input="{Binding tags[moveAbs.iStopContinueButton]}"  CType="toggle" Canvas.Left="10" Canvas.Top="10" Height="81" Width="95"/>
+
+            <p:plcButton Text="START  &#xA;AUTO" Right="False"  Output="{Binding tags[auto.bExecute]}" Input="{Binding tags[.bAuto]}"   CType="press" Canvas.Top="10" Width="92" Canvas.Left="110" Height="81"/>
+            <p:plcButton Text="Reset" Img="in1" Right="False" Input="{Binding tags[.bReset]}"  CType="press" Canvas.Left="13" Canvas.Top="96" Width="79" Height="59"/>
+            <p:plcButton Text="Pusher" Right="True" Input="{Binding tags[.oPusher]}"  CType="press" Canvas.Top="98" Width="112" Canvas.Left="207" Height="57"/>
+            <p:plcButton Small="True" Text="iPusherOut" Right="True" Input="{Binding tags[.iPusherOut]}"  CType="toggle" Canvas.Top="10" Width="112" Canvas.Left="207" Height="40"/>
+            <p:plcButton Small="True" Text="iPusherIn" Right="True" Input="{Binding tags[.iPusherIn]}"  CType="toggle" Canvas.Top="55" Width="112" Canvas.Left="207" Height="36"/>
+            <p:plcButton Text="" Img="rw" Right="True" Input="{Binding tags[.bAxisFW]}"  CType="press" Canvas.Left="291" Canvas.Top="261" Width="37" Height="36"/>
+            <p:plcButton Text="" Img="fw" Right="False" Input="{Binding tags[.bAxisRW]}"  CType="press" Canvas.Left="250" Canvas.Top="261" Width="36" Height="36"/>
+            <p:plcButton Text="" Img="up" Right="False" Input="{Binding tags[.bAxis2FW]}"  CType="press" Canvas.Left="291" Canvas.Top="169" Width="37" Height="41"/>
+            <p:plcButton Text="" Img="down" Right="False" Input="{Binding tags[.bAxis2RW]}"  CType="press" Canvas.Left="291" Canvas.Top="215" Width="37" Height="41"/>
+            <p:plcButton Text="Aja  &#xA; NCI1" Right="True" Output="{Binding tags[driveNCI.bExecute]}" Input="{Binding tags[driveNCI.bBusy]}"  CType="press" Canvas.Top="169" Width="77" Canvas.Left="209" Height="41"/>
+            <p:plcButton Text="Aja  &#xA; NCI2" Right="True" Output="{Binding tags[driveCNC.bExecute]}" Input="{Binding tags[driveCNC.bBusy]}"  CType="press" Canvas.Top="215" Width="77" Canvas.Left="207" Height="41"/>
+            <p:plcButton Text="Roller" Right="True" Input="{Binding tags[.oRoller]}"  CType="toggle" Canvas.Top="96" Width="105" Canvas.Left="97" Height="57"/>
         </Canvas>
-        <Canvas  DataContext="{Binding plc[2]}" Width="152" Height="141" Background="#26808080" Canvas.Left="657" Canvas.Top="117" Panel.ZIndex="1">
-            <p:plcButton Text="PLC2 &#xA;Var1" Right="False"  Input="{Binding tags[.bVar1]}"   CType="toggle" Canvas.Top="10" Width="103" Canvas.Left="10" Height="57"/>
-            <p:plcButton Text="PLC2 &#xA;Var2" Img="down" Right="False" Input="{Binding tags[.bVar2]}"  CType="toggle" Canvas.Left="10" Canvas.Top="72" Width="103" Height="59"/>
-        </Canvas>
-        -->
 
-        <!--
-        <local:navButton Page="settings" Text="Siirry Sivu 2" Canvas.Left="590" Canvas.Top="11" Height="35" Width="98"/>
-        <p:editTextBox Text="{Binding plc[2].tags[TESTB].Val, UpdateSourceTrigger=PropertyChanged}"  Canvas.Left="493" Canvas.Top="84" Width="75" Height="28" InputType="alpha" />
-        <p:editTextBox Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}"  Canvas.Left="573" Canvas.Top="84" Width="120" Height="25" InputType="numeric"/>
-        <p:editTextBox x:Name="textBoxVal1" Height="23" Canvas.Left="590" TextWrapping="Wrap" Text="TextBox" Canvas.Top="51" Width="72"/>
-        <TextBox x:Name="textBox" Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}" Height="23" TextWrapping="Wrap" Canvas.Top="11" Width="84" FontSize="16" FontWeight="Bold" Canvas.Left="493"/>
-        -->
+        <local:navButton Page="settings" Text="Siirry Sivu 2" Canvas.Left="434" Canvas.Top="51" Height="35" Width="195" Loaded="NavButton_Loaded"/>
+
+        <TextBlock Text="{Binding plc[1].tags[.Axis.NcToPlc.ActVelo].Val, UpdateSourceTrigger=PropertyChanged,StringFormat=F2}"  Width="98"  Canvas.Left="434" Canvas.Top="285" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
+        <TextBlock Text="{Binding plc[1].tags[.Axis2.NcToPlc.ActVelo].Val, UpdateSourceTrigger=PropertyChanged,StringFormat=F2}"  Width="92"  Canvas.Left="537" Canvas.Top="285" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
 
 
-        <TextBlock Text="{Binding plc[1].tags[.sProgram].Val, StringFormat={}{0:0.###}, UpdateSourceTrigger=PropertyChanged}"  Width="167"  Canvas.Left="804" Canvas.Top="303" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
+        <p:recipeControl Plc="{Binding plc[1]}" DgvType="recipe" x:Name="recipeC" DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="429" Width="323"/>
+        <p:dirControl IniName="auto"  Dir="recipes" x:Name="dirC" Width="100" Height="293" Canvas.Left="328" Canvas.Top="16"/>
 
-        <p:recipeControl Plc="{Binding plc[1]}" DgvType="recipe" x:Name="recipeC" DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="429" Width="435"/>
-        <p:dirControl IniName="auto"  Dir="recipes" x:Name="dirC" Width="179" Height="416" Canvas.Left="452" Canvas.Top="10"/>
         <p:previewControl RecipeControl="{Binding recipeCtrl}" DataHasChanged="{Binding recipeCtrl.DataHasChanged}"  Width="977" Height="46" Canvas.Top="434">
             <p:previewControl.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -47,39 +49,25 @@
                 </LinearGradientBrush>
             </p:previewControl.Background>
         </p:previewControl>
+        <Button x:Name="buttonSendData" Content="Download &#xA;  Recipe" Canvas.Left="329" Canvas.Top="318" Width="100" Height="49" Click="buttonSendData_Click"/>
+        <CheckBox x:Name="checkSettings" Content="{Binding Path=settingsDirCtrl.SelectedFileName, StringFormat='Use setup :  {0}'}" Canvas.Left="329" Canvas.Top="383" IsChecked="True"/>
 
-        <Button x:Name="buttonSendData" Content="Lataa ohjelma" Canvas.Left="647" Canvas.Top="346" Width="330" Height="80" Click="buttonSendData_Click"/>
-
-        <!--
-        <p:editTextBox x:Name="textBoxVal2_Copy" Text="{Binding plc[1].tags[.sVar1].Val}" InputType="numeric" TextWrapping="Wrap" Width="66" RenderTransformOrigin="0.964,6.167" Canvas.Left="383" Canvas.Top="409"/>
-        <Button x:Name="buttonTest" Content="Button" Canvas.Left="493" Canvas.Top="43" Width="75" Click="buttonTest_Click" Height="36"/>
-        
-        -->
-        <CheckBox x:Name="checkSettings" Content="{Binding Path=settingsDirCtrl.SelectedFileName, StringFormat='Use setup :  {0}'}" Canvas.Left="647" Canvas.Top="11" IsChecked="True" RenderTransformOrigin="7.883,-0.691" Width="179"/>
-        <Label x:Name="label" Content="Ladattu ohjelma : " Canvas.Left="667" Canvas.Top="303"/>
-        <p:plcIndicator Text="Valoverho" Input="{Binding plc[1].tags[.bLightCurtain]}" Canvas.Left="875" Canvas.Top="126"/>
-        <TextBlock Text="{Binding plc[1].tags[.Axis.nctoplc.ErrorCode].Val, StringFormat=\{0:0.###\}, UpdateSourceTrigger=PropertyChanged}"  Width="167"  Canvas.Left="804" Canvas.Top="264" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
-        <Label x:Name="label_Copy" Content="Moottorin Tilakoodi : " Canvas.Left="647" Canvas.Top="264"/>
-        <Label x:Name="label_Copy1" Content="" Canvas.Left="646" Canvas.Top="231"/>
-        <TextBlock Text="{Binding plc[1].tags[.sStateMsg].Val, UpdateSourceTrigger=PropertyChanged}"  Width="324"  Canvas.Left="647" Canvas.Top="226" Height="28" Background="Black" Foreground="#FFFFF7F7" FontSize="20"/>
-        <p:plcIndicator Text="Moottori" Input="{Binding plc[1].tags[.bEnableStatus]}" Canvas.Left="874" Canvas.Top="158"/>
-        <!--
-        <p:plcSlider  Input="{Binding plc[1].tags[.nVar1]}" Canvas.Left="493" Canvas.Top="262" Width="412" Height="31"/>
-        <p:editTextBox Input="{Binding plc[1].tags[.nVar1]}" InputType="numeric" TextWrapping="Wrap" Width="66"  Canvas.Left="916" Canvas.Top="282"/>
-
-        <p:plcSlider  Input="{Binding plc[1].tags[.lVar1]}" Canvas.Left="663" Canvas.Top="298" Height="95" Width="242" RenderTransformOrigin="0.5,0.5"/>
+        <p:plcSlider  Input="{Binding plc[1].tags[motor.jogVel]}" Canvas.Left="834" Canvas.Top="398" Width="143" Height="31"/>
+        <p:editTextBox Input="{Binding plc[1].tags[.nVar1]}" InputType="numeric" TextWrapping="Wrap" Width="66"  Canvas.Left="911" Canvas.Top="127"/>
+        <p:plcIndicator Small="True" Input="{Binding plc[1].tags[.iPusherIn]}" Text="iPusherIn" Canvas.Left="774" Canvas.Top="170"/>
+        <p:plcIndicator Small="True" Input="{Binding plc[1].tags[.iPusherOut]}" Text="iPusherOut" Canvas.Left="774" Canvas.Top="146"/>
 
 
-        <p:editTextBox x:Name="textBoxVal2" Text="{c:Binding (plc[1].tags[.lVar1].Val), StringFormat={}{0:0.#m/s}}"  Width="66"  Canvas.Left="918" Canvas.Top="311" Height="19"/>
-        <p:editTextBox Input="{Binding plc[1].tags[.iVar1]}" TextWrapping="Wrap" Width="64"  Canvas.Left="918" Canvas.Top="384"/>
-        <Button x:Name="button" Content="Button" Canvas.Left="918" Canvas.Top="335" Width="66" Height="41" Click="button_Click"/>
+        <p:editTextBox x:Name="textBoxVal2" Text="{c:Binding (plc[1].tags[.lVar1].Val), StringFormat={}{0:0.#m/s}}"  Width="66"  Canvas.Left="911" Canvas.Top="151" Height="19"/>
 
-        <p:plcSlider Input="{Binding plc[1].tags[.iVar1]}" Canvas.Left="663" Canvas.Top="398" Height="31" Width="242"/>
-        <p:plcGauge  MLine="10" Input="{Binding plc[1].tags[.lVar1]}" Canvas.Left="814" Canvas.Top="176" Height="82" Width="91"/>
-        <p:plcGauge  GaugeColor="CadetBlue" MLine="5" Input="{Binding plc[1].tags[.nVar1]}"  Canvas.Left="814" Canvas.Top="16" Height="160" Width="179"/>
-        <Button x:Name="button1" Content="Button" Canvas.Left="931" Canvas.Top="205" Width="75" Click="button1_Click"/>
-        <local:plcScope Background="White" TimeScale="10000"  Input="{Binding plc[1].tags[.lVar1]}" Height="128" Canvas.Left="493" Canvas.Top="301" Width="159"/>
-   
-        -->
+        <p:editTextBox InputType="alpha" Text="{Binding plc[1].tags[.sProgram].Val,  UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Width="92"  Canvas.Left="864" Canvas.Top="180"/>
+        <p:plcGauge  MLine="10" Input="{Binding plc[1].tags[.Axis.NcToPlc.ActVelo]}" Canvas.Left="776" Height="128" Width="128" Canvas.Top="13"/>
+
+        <local:plcScope Background="White" TimeScale="10000"  Input="{Binding plc[1].tags[.Axis.NcToPlc.ActPos]}" Height="118" Canvas.Left="434" Canvas.Top="316" Width="195"/>
+        <local:plcPath  Background="White" InputX="{Binding plc[1].tags[.Axis.NcToPlc.ActPos]}" InputY="{Binding plc[1].tags[.Axis2.NcToPlc.ActPos]}" Height="180" Canvas.Left="776" Canvas.Top="209" Width="180"/>
+        <TextBlock x:Name="textBlock" Canvas.Left="776" TextWrapping="Wrap" Text="JogVel" Canvas.Top="398" Width="58"/>
+        <Label x:Name="label" Content="THIS JUST A DEMO UI!" Canvas.Left="434" Canvas.Top="16" FontWeight="Bold" FontSize="18"/>
+        <Label Content="{c:Binding 'plc[1].tags[roller.delay.ET].Val / 1000', StringFormat='{}{0:F0} s'}"  Canvas.Left="911" Canvas.Top="91" FontSize="16" Height="30" Width="80"/>
+
     </Canvas>
 </Page>

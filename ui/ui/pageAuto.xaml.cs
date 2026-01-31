@@ -44,10 +44,9 @@ namespace ui
                 workData = new plcdata(recipeC.dataGrid, null);
             }
             dm.plc["1"].writePLCData(workData);
-            //dm.plc["2"].writePLCData(workData);
+            dm.plc["2"].writePLCData(workData);
 
-            dm.plc["1"].tags[".sProgram"].Val = dirC.SelectedFileName;
-            Console.WriteLine(":"+dirC.SelectedFileName);
+
         }
 
         private void buttonTest_Click(object sender, RoutedEventArgs e)
@@ -67,6 +66,11 @@ namespace ui
         {
             long milliseconds = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             
+        }
+
+        private void NavButton_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

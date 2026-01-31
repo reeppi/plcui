@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,23 +25,7 @@ namespace ui
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Sammuta kone", "Haluatko varmasti sammuttaa koneen", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            if (result == MessageBoxResult.Yes)
-            {
-                var psi = new ProcessStartInfo("shutdown", "/s /t 0");
-                psi.CreateNoWindow = true;
-                psi.UseShellExecute = false;
-                Process.Start(psi);
-            }
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("Close");
-            System.Windows.Application.Current.Shutdown();
-        }
+    
     }
 }

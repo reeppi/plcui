@@ -6,55 +6,71 @@
   </setup>
   <setup>
     <param>ADDRESS</param>
-    <desc>5.89.177.252.1.1</desc>
+    <desc>192.168.56.1.1.1</desc>
   </setup>
   <setup>
-    <param>.bEstop</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bLightCurtain</param>
+    <param>.bAuto</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.oRoller1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.oRoller2</param>
+    <param>.bReset</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
+    <desc>Resetti</desc>
   </setup>
   <setup>
-    <param>.oRoller3</param>
+    <param>auto.bExecute</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.oRoller4</param>
+    <param>moveAbs.bExecute</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
+    <desc>Boolean variable1</desc>
+    <min />
+    <max />
   </setup>
   <setup>
-    <param>.oRoller5</param>
+    <param>moveAbs.iStopContinueButton</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
+    <desc>Nappula</desc>
   </setup>
   <setup>
-    <param>.oRoller6</param>
-    <value>BOOL</value>
+    <param>.Axis.NcToPlc.ActPos</param>
+    <value>LREAL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+    <desc>ActPos</desc>
+    <min>0</min>
+    <max>300</max>
+  </setup>
+  <setup>
+    <param>.Axis.NcToPlc.ActVelo</param>
+    <value>LREAL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+    <min>-300</min>
+    <max>300</max>
+  </setup>
+  <setup>
+    <param>.Axis2.NcToPlc.ActPos</param>
+    <value>LREAL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+    <min>0</min>
+    <max>300</max>
+  </setup>
+  <setup>
+    <param>.Axis2.NcToPlc.ActVelo</param>
+    <value>LREAL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
@@ -65,125 +81,62 @@
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.iPusherAOut</param>
+    <param>.oRoller</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.iPusherAIn</param>
+    <param>.iPusherOut</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.iPusherBOut</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iPusherBIn</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller2</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller3</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller4</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller5</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iRoller6</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bEnableStatus</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bDriveFW</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bDriveRW</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.fHihna</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.velMan</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.fStartPos</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Aloituspiste</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.fEndRun</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Loppuajo</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.strokeTime</param>
-    <value>DINT</value>
-    <mode>change</mode>
-    <desc>Iskun aika</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.Axis.nctoplc.actpos</param>
-    <value>LREAL</value>
-    <mode>cyclic</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.Axis.nctoplc.ErrorCode</param>
+    <param>roller.delay.ET</param>
     <value>UDINT</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>.iPusherIn</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>.bAxisRW</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>.bAxisFW</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>.bAxis2RW</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>.bAxis2FW</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>driveNCI.bBusy</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>driveNCI.bExecute</param>
+    <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
   </setup>
@@ -194,224 +147,23 @@
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.sStateMsg</param>
-    <value>STRING</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bUpdateStr</param>
+    <param>driveCNC.bExecute</param>
     <value>BOOL</value>
     <mode>change</mode>
-    <desc />
     <plc>true</plc>
   </setup>
   <setup>
-    <param>.vel</param>
+    <param>driveCNC.bBusy</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <plc>true</plc>
+  </setup>
+  <setup>
+    <param>motor.jogVel</param>
     <value>LREAL</value>
     <mode>change</mode>
-    <desc>Nopeus</desc>
     <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.acc</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Kiihtyvyys</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.dec</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Hidastuvuus</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.jerk</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Jerk</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.velF</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Nopeus (pika)</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.accF</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Kiihtyvyys (pika)</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.decF</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Hidastuvuus (pika)</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.jerkF</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc>Jerk (pika)</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bGripCheckOff</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.oGripper1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.oGripper2</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.oSlider</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.oGripPusher</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iSliderGrip1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.iSliderGrip2</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bGrip1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc>Etu pihti</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bGrip2</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc>Taka pihti</desc>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bSave</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-  </setup>
-  <setup>
-    <param>.bVar1</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-    <min />
-    <max />
-  </setup>
-  <setup>
-    <param>.bVar2</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>.nVar1</param>
-    <value>UDINT</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-    <min />
-    <max>5</max>
-  </setup>
-  <setup>
-    <param>.iVar1</param>
-    <value>DINT</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-    <min>-50</min>
-    <max>50</max>
-  </setup>
-  <setup>
-    <param>.lVar1</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
     <min>0</min>
-    <max>500</max>
-  </setup>
-  <setup>
-    <param>.nTest</param>
-    <value>LREAL</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-    <max />
-  </setup>
-  <setup>
-    <param>.sVar1</param>
-    <value>STRING</value>
-    <mode>change</mode>
-    <desc />
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>demo</param>
-    <value>BOOL</value>
-    <desc />
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>demo2</param>
-    <value>BOOL</value>
-    <desc />
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>TEST2</param>
-    <value>BOOL</value>
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>TEST</param>
-    <value>STRING</value>
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>5555</param>
-    <value>BOOL</value>
-    <plc>false</plc>
-  </setup>
-  <setup>
-    <param>TEST3</param>
-    <value>BOOL</value>
-    <plc>false</plc>
+    <max>200</max>
   </setup>
 </DocumentElement>

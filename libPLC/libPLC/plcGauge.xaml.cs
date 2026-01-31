@@ -75,7 +75,11 @@ namespace libPLC
             Double MaxV = Input.MaxVal.ChangeType<double>();
             double fact = 270 / (MaxV  - MinV);
             Double tagV = tag.ChangeType<double>();
-     
+            /*
+            Double tagV = 0;
+            Double.TryParse(tag.ToString(), out tagV);
+            Double.TryParse(Input.MaxVal.ToString(), out MaxV);*/
+
             if (NeedleCanvas == null) LoadControl();
             DoubleAnimation moveAni;
 

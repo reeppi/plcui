@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <setup>
+    <param>PLC</param>
+    <desc>twincat</desc>
+  </setup>
+  <setup>
+    <param>ADDRESS</param>
+    <desc>192.168.200.5.1.1</desc>
+  </setup>
+  <setup>
+    <param>.bVar1</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <desc>PLC2 BOOL1</desc>
+    <plc>false</plc>
+  </setup>
+  <setup>
+    <param>.bVar2</param>
+    <value>BOOL</value>
+    <mode>change</mode>
+    <desc>PLC2 BOOL2</desc>
+    <plc>false</plc>
+  </setup>
+  <setup>
+    <param>TESTB</param>
+    <value>STRING</value>
+    <mode>change</mode>
+    <desc>PLC2 STRING</desc>
+    <plc>false</plc>
+  </setup>
+  <setup>
+    <param>TESTC</param>
+    <value>STRING</value>
+    <mode>change</mode>
+    <desc>PLC2 STR2</desc>
+    <plc>false</plc>
+  </setup>
+  <setup>
+    <param>TESTX</param>
+    <value>STRING</value>
+    <mode>change</mode>
+    <desc>plc2 test</desc>
+  </setup>
+</DocumentElement>

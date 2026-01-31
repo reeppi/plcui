@@ -16,14 +16,14 @@
       >
 
     <Canvas>
-        <p:recipeControl  x:Name="variablesC"  DgvType="variables"  DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="480" Width="706"/>
-        <p:dirControl x:Name="dirC"  IniName="PLC"  Dir="plc" Canvas.Left="807" Canvas.Top="10" Height="103" Width="119"/>
-        <Button x:Name="buttonReloadConnection" Click="buttonReloadConnection_Click" Content="Reload" Canvas.Left="807" Canvas.Top="405" Width="119" Height="42"/>
-        <Button x:Name="buttonRefresh" Content="Refresh" Canvas.Left="807" Canvas.Top="361" Width="119" Height="37" Click="buttonRefresh_Click"/>
-        <Button x:Name="buttonAddWatch" Content="AddWatch" Height="40" Canvas.Left="807" Canvas.Top="273" Width="119" Click="buttonAddWatch_Click"/>
-        <Button x:Name="buttonAddChart" Content="AddScope" Height="40" Canvas.Left="807" Canvas.Top="316" Width="119" Click="buttonAddChart_Click"/>
-
-        <p:plcButton Text="Save &#x0a;persistent &#x0a;PLC-data" Input="{Binding plc[1].tags[.bSave]}" Img="indicator"  CType="press"  Canvas.Left="807" Canvas.Top="152" Width="119" Height="82"/>
+        <p:recipeControl  x:Name="variablesC"  DgvType="variables"  DirControl="{Binding ElementName=dirC}" FilePath="{Binding SelectedFile, ElementName=dirC}" Height="480" Width="618"/>
+        <p:dirControl x:Name="dirC"  IniName="PLC"  Dir="plc" Canvas.Left="623" Canvas.Top="10" Height="112" Width="90"/>
+        <Button x:Name="buttonReloadConnection" Click="buttonReloadConnection_Click" Content="Reload" Canvas.Left="623" Canvas.Top="426" Width="90" Height="42"/>
+        <p:plcButton x:Name="TestiVar" Text="PLC1 &#xA;Var1" Right="False"  Input="{Binding plc[1].tags[.bVar1]}"   CType="toggle"  Canvas.Left="623" Canvas.Top="127" Width="90" Height="93"/>
+        <Button x:Name="buttonRefresh" Content="Refresh" Canvas.Left="623" Canvas.Top="375" Width="90" Height="30" Click="buttonRefresh_Click"/>
+        <Button x:Name="buttonAddWatch" Content="AddWatch" Height="40" Canvas.Left="623" Canvas.Top="225" Width="90" Click="buttonAddWatch_Click"/>
+        <p:plcButton Text="Testi" Right="False"  Input="{Binding plc[1].tags[.bVar2]}"   CType="toggle" Canvas.Top="127" Width="90" Canvas.Left="732" Height="58"/>
+        <Button x:Name="buttonAddChart" Content="AddScope" Height="40" Canvas.Left="623" Canvas.Top="270" Width="90" Click="buttonAddChart_Click"/>
 
     </Canvas>
 </Page>
