@@ -28,20 +28,11 @@
     <plc>true</plc>
   </setup>
   <setup>
-    <param>moveAbs.bExecute</param>
-    <value>BOOL</value>
-    <mode>change</mode>
-    <plc>true</plc>
-    <desc>Boolean variable1</desc>
-    <min />
-    <max />
-  </setup>
-  <setup>
     <param>moveAbs.iStopContinueButton</param>
     <value>BOOL</value>
     <mode>change</mode>
     <plc>true</plc>
-    <desc>Nappula</desc>
+    <desc>Pause nappula</desc>
   </setup>
   <setup>
     <param>.Axis.NcToPlc.ActPos</param>
