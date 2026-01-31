@@ -10,6 +10,7 @@ The PLC user interface can be created using Visual Studio using this library. Im
 <li>Button</li>
 <li>Slider</li>
 <li>Indicator</li>
+<li>XY-path display</li>
 </ul>
 
 <img src="auto.png">
